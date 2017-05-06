@@ -1,6 +1,17 @@
 Bitcoin Core integration/staging tree
 =====================================
 
+
+
+Start the docker container:
+
+    docker run -i -t smatthewenglish/oakcoin:version0 /bin/bash
+
+Lock conversation
+
+
+
+
 [![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
 
 https://bitcoincore.org
