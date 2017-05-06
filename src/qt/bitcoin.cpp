@@ -1,12 +1,12 @@
-// Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2011-2016 The Oakcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/oakcoin-config.h"
 #endif
 
-#include "bitcoingui.h"
+#include "oakcoingui.h"
 
 #include "chainparams.h"
 #include "clientmodel.h"
@@ -92,7 +92,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("bitcoin-core", psz).toStdString();
+    return QCoreApplication::translate("oakcoin-core", psz).toStdString();
 }
 
 static QString GetLangTerritory()
@@ -139,11 +139,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in bitcoin.qrc)
+    // Load e.g. oakcoin_de.qm (shortcut "de" needs to be defined in oakcoin.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in bitcoin.qrc)
+    // Load e.g. oakcoin_de_DE.qm (shortcut "de_DE" needs to be defined in oakcoin.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -170,14 +170,14 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-/** Class encapsulating Bitcoin Core startup and shutdown.
+/** Class encapsulating Oakcoin Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class BitcoinCore: public QObject
+class OakcoinCore: public QObject
 {
     Q_OBJECT
 public:
-    explicit BitcoinCore();
+    explicit OakcoinCore();
 
 public Q_SLOTS:
     void initialize();
@@ -196,13 +196,13 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main Bitcoin application object */
-class BitcoinApplication: public QApplication
+/** Main Oakcoin application object */
+class OakcoinApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit BitcoinApplication(int &argc, char **argv);
-    ~BitcoinApplication();
+    explicit OakcoinApplication(int &argc, char **argv);
+    ~OakcoinApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -225,7 +225,7 @@ public:
     /// Get process return value
     int getReturnValue() { return returnValue; }
 
-    /// Get window identifier of QMainWindow (BitcoinGUI)
+    /// Get window identifier of QMainWindow (OakcoinGUI)
     WId getMainWinId() const;
 
 public Q_SLOTS:
@@ -244,7 +244,7 @@ private:
     QThread *coreThread;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    BitcoinGUI *window;
+    OakcoinGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
@@ -257,20 +257,20 @@ private:
     void startThread();
 };
 
-#include "bitcoin.moc"
+#include "oakcoin.moc"
 
-BitcoinCore::BitcoinCore():
+OakcoinCore::OakcoinCore():
     QObject()
 {
 }
 
-void BitcoinCore::handleRunawayException(const std::exception *e)
+void OakcoinCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(GetWarnings("gui")));
 }
 
-void BitcoinCore::initialize()
+void OakcoinCore::initialize()
 {
     try
     {
@@ -299,7 +299,7 @@ void BitcoinCore::initialize()
     }
 }
 
-void BitcoinCore::shutdown()
+void OakcoinCore::shutdown()
 {
     try
     {
@@ -316,7 +316,7 @@ void BitcoinCore::shutdown()
     }
 }
 
-BitcoinApplication::BitcoinApplication(int &argc, char **argv):
+OakcoinApplication::OakcoinApplication(int &argc, char **argv):
     QApplication(argc, argv),
     coreThread(0),
     optionsModel(0),
@@ -332,17 +332,17 @@ BitcoinApplication::BitcoinApplication(int &argc, char **argv):
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
-    // This must be done inside the BitcoinApplication constructor, or after it, because
+    // This must be done inside the OakcoinApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = GetArg("-uiplatform", BitcoinGUI::DEFAULT_UIPLATFORM);
+    platformName = GetArg("-uiplatform", OakcoinGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-BitcoinApplication::~BitcoinApplication()
+OakcoinApplication::~OakcoinApplication()
 {
     if(coreThread)
     {
@@ -365,27 +365,27 @@ BitcoinApplication::~BitcoinApplication()
 }
 
 #ifdef ENABLE_WALLET
-void BitcoinApplication::createPaymentServer()
+void OakcoinApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void BitcoinApplication::createOptionsModel(bool resetSettings)
+void OakcoinApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(NULL, resetSettings);
 }
 
-void BitcoinApplication::createWindow(const NetworkStyle *networkStyle)
+void OakcoinApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new BitcoinGUI(platformStyle, networkStyle, 0);
+    window = new OakcoinGUI(platformStyle, networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
     pollShutdownTimer->start(200);
 }
 
-void BitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void OakcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
@@ -395,12 +395,12 @@ void BitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
 }
 
-void BitcoinApplication::startThread()
+void OakcoinApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    BitcoinCore *executor = new BitcoinCore();
+    OakcoinCore *executor = new OakcoinCore();
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -416,20 +416,20 @@ void BitcoinApplication::startThread()
     coreThread->start();
 }
 
-void BitcoinApplication::parameterSetup()
+void OakcoinApplication::parameterSetup()
 {
     InitLogging();
     InitParameterInteraction();
 }
 
-void BitcoinApplication::requestInitialize()
+void OakcoinApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void BitcoinApplication::requestShutdown()
+void OakcoinApplication::requestShutdown()
 {
     // Show a simple window indicating shutdown status
     // Do this first as some of the steps may take some time below,
@@ -456,7 +456,7 @@ void BitcoinApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void BitcoinApplication::initializeResult(bool success)
+void OakcoinApplication::initializeResult(bool success)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -478,8 +478,8 @@ void BitcoinApplication::initializeResult(bool success)
         {
             walletModel = new WalletModel(platformStyle, pwalletMain, optionsModel);
 
-            window->addWallet(BitcoinGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(BitcoinGUI::DEFAULT_WALLET);
+            window->addWallet(OakcoinGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(OakcoinGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
                              paymentServer, SLOT(fetchPaymentACK(CWallet*,const SendCoinsRecipient&,QByteArray)));
@@ -499,7 +499,7 @@ void BitcoinApplication::initializeResult(bool success)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // bitcoin: URIs or payment requests:
+        // oakcoin: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -513,18 +513,18 @@ void BitcoinApplication::initializeResult(bool success)
     }
 }
 
-void BitcoinApplication::shutdownResult()
+void OakcoinApplication::shutdownResult()
 {
     quit(); // Exit main loop after shutdown finished
 }
 
-void BitcoinApplication::handleRunawayException(const QString &message)
+void OakcoinApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Bitcoin can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", OakcoinGUI::tr("A fatal error occurred. Oakcoin can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(EXIT_FAILURE);
 }
 
-WId BitcoinApplication::getMainWinId() const
+WId OakcoinApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -550,10 +550,10 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(bitcoin);
-    Q_INIT_RESOURCE(bitcoin_locale);
+    Q_INIT_RESOURCE(oakcoin);
+    Q_INIT_RESOURCE(oakcoin_locale);
 
-    BitcoinApplication app(argc, argv);
+    OakcoinApplication app(argc, argv);
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -606,7 +606,7 @@ int main(int argc, char *argv[])
     if (!Intro::pickDataDirectory())
         return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data directory and parse bitcoin.conf
+    /// 6. Determine availability of data directory and parse oakcoin.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false)))
     {
@@ -658,7 +658,7 @@ int main(int argc, char *argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // bitcoin: links repeatedly have their payment requests routed to this process:
+    // oakcoin: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 

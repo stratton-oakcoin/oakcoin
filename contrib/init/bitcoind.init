@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  bitcoind The bitcoin core server.
+#  oakcoind The oakcoin core server.
 #
 #
 # chkconfig: 345 80 20
-# description: bitcoind
-# processname: bitcoind
+# description: oakcoind
+# processname: oakcoind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/bitcoind, see below
-if [ -f /etc/sysconfig/bitcoind ]; then
-        . /etc/sysconfig/bitcoind
+# you can override defaults in /etc/sysconfig/oakcoind, see below
+if [ -f /etc/sysconfig/oakcoind ]; then
+        . /etc/sysconfig/oakcoind
 fi
 
 RETVAL=0
 
-prog=bitcoind
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/bitcoind
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/bitcoind}
+prog=oakcoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/oakcoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/oakcoind}
 
-# bitcoind defaults to /usr/bin/bitcoind, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/bitcoind}
+# oakcoind defaults to /usr/bin/oakcoind, override with BITCOIND_BIN
+oakcoind=${BITCOIND_BIN-/usr/bin/oakcoind}
 
-# bitcoind opts default to -disablewallet, override with BITCOIND_OPTS
-bitcoind_opts=${BITCOIND_OPTS--disablewallet}
+# oakcoind opts default to -disablewallet, override with BITCOIND_OPTS
+oakcoind_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $bitcoind $bitcoind_opts
+    daemon $DAEMONOPTS $oakcoind $oakcoind_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

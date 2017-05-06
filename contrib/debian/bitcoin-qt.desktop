@@ -1,13 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Bitcoin Core
-Comment=Connect to the Bitcoin P2P Network
-Comment[de]=Verbinde mit dem Bitcoin peer-to-peer Netzwerk
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=Oakcoin Core
+Comment=Connect to the Oakcoin P2P Network
+Comment[de]=Verbinde mit dem Oakcoin peer-to-peer Netzwerk
+Comment[fr]=Oakcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Oakcoin, eşten eşe kriptografik sanal para birimi
+Exec=oakcoin-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=oakcoin128
+MimeType=x-scheme-handler/oakcoin;
 Categories=Office;Finance;

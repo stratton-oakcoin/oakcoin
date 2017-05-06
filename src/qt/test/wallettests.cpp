@@ -1,6 +1,6 @@
 #include "wallettests.h"
 
-#include "qt/bitcoinamountfield.h"
+#include "qt/oakcoinamountfield.h"
 #include "qt/callback.h"
 #include "qt/optionsmodel.h"
 #include "qt/platformstyle.h"
@@ -9,7 +9,7 @@
 #include "qt/sendcoinsentry.h"
 #include "qt/transactiontablemodel.h"
 #include "qt/walletmodel.h"
-#include "test/test_bitcoin.h"
+#include "test/test_oakcoin.h"
 #include "validation.h"
 #include "wallet/wallet.h"
 
@@ -37,12 +37,12 @@ void ConfirmSend()
 }
 
 //! Send coins to address and return txid.
-uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const CBitcoinAddress& address, CAmount amount)
+uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const COakcoinAddress& address, CAmount amount)
 {
     QVBoxLayout* entries = sendCoinsDialog.findChild<QVBoxLayout*>("entries");
     SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(entries->itemAt(0)->widget());
     entry->findChild<QValidatedLineEdit*>("payTo")->setText(QString::fromStdString(address.ToString()));
-    entry->findChild<BitcoinAmountField*>("payAmount")->setValue(amount);
+    entry->findChild<OakcoinAmountField*>("payAmount")->setValue(amount);
     uint256 txid;
     boost::signals2::scoped_connection c(wallet.NotifyTransactionChanged.connect([&txid](CWallet*, const uint256& hash, ChangeType status) {
         if (status == CT_NEW) txid = hash;
@@ -77,9 +77,9 @@ QModelIndex FindTx(const QAbstractItemModel& model, const uint256& txid)
 //
 // This also requires overriding the default minimal Qt platform:
 //
-//     src/qt/test/test_bitcoin-qt -platform xcb      # Linux
-//     src/qt/test/test_bitcoin-qt -platform windows  # Windows
-//     src/qt/test/test_bitcoin-qt -platform cocoa    # macOS
+//     src/qt/test/test_oakcoin-qt -platform xcb      # Linux
+//     src/qt/test/test_oakcoin-qt -platform windows  # Windows
+//     src/qt/test/test_oakcoin-qt -platform cocoa    # macOS
 void WalletTests::walletTests()
 {
     // Set up wallet and chain with 101 blocks (1 mature block for spending).
@@ -108,8 +108,8 @@ void WalletTests::walletTests()
     // Send two transactions, and verify they are added to transaction list.
     TransactionTableModel* transactionTableModel = walletModel.getTransactionTableModel();
     QCOMPARE(transactionTableModel->rowCount({}), 101);
-    uint256 txid1 = SendCoins(wallet, sendCoinsDialog, CBitcoinAddress(CKeyID()), 5 * COIN);
-    uint256 txid2 = SendCoins(wallet, sendCoinsDialog, CBitcoinAddress(CKeyID()), 10 * COIN);
+    uint256 txid1 = SendCoins(wallet, sendCoinsDialog, COakcoinAddress(CKeyID()), 5 * COIN);
+    uint256 txid2 = SendCoins(wallet, sendCoinsDialog, COakcoinAddress(CKeyID()), 10 * COIN);
     QCOMPARE(transactionTableModel->rowCount({}), 103);
     QVERIFY(FindTx(*transactionTableModel, txid1).isValid());
     QVERIFY(FindTx(*transactionTableModel, txid2).isValid());

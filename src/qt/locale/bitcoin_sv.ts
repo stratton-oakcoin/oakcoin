@@ -62,12 +62,12 @@
         <translation>Mottagaradresser</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Detta är dina Bitcoin adresser för att skicka betalningar. Kolla alltid summan och den mottagande adressen innan du skickar Bitcoins.</translation>
+        <source>These are your Oakcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Detta är dina Oakcoin adresser för att skicka betalningar. Kolla alltid summan och den mottagande adressen innan du skickar Oakcoins.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Detta är dina Bitcoin adresser för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
+        <source>These are your Oakcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Detta är dina Oakcoin adresser för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -181,7 +181,7 @@ Var vänlig och försök igen.</translation>
         <translation>Plånbok krypterad</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your oakcoins from being stolen by malware infecting your computer.</source>
         <translation>%1 kommer nu att stänga ner för att färdigställa krypteringen. Tänk på att en krypterad plånbok inte skyddar mot stöld om din dator är infekterad med en keylogger.</translation>
     </message>
     <message>
@@ -233,7 +233,7 @@ Var vänlig och försök igen.</translation>
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>OakcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signera &amp;meddelande...</translation>
@@ -339,8 +339,8 @@ Var vänlig och försök igen.</translation>
         <translation>Återindexerar block på disken...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Skicka bitcoins till en Bitcoin-adress</translation>
+        <source>Send coins to a Oakcoin address</source>
+        <translation>Skicka oakcoins till en Oakcoin-adress</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -363,8 +363,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Verifiera meddelande...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Oakcoin</source>
+        <translation>Oakcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -391,12 +391,12 @@ Var vänlig och försök igen.</translation>
         <translation>Kryptera de privata nycklar som tillhör din plånbok</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Signera meddelanden med din Bitcoin-adress för att bevisa att du äger dem</translation>
+        <source>Sign messages with your Oakcoin addresses to prove you own them</source>
+        <translation>Signera meddelanden med din Oakcoin-adress för att bevisa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verifiera meddelanden för att vara säker på att de var signerade med specificerade Bitcoin-adresser</translation>
+        <source>Verify messages to ensure they were signed with specified Oakcoin addresses</source>
+        <translation>Verifiera meddelanden för att vara säker på att de var signerade med specificerade Oakcoin-adresser</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -415,8 +415,8 @@ Var vänlig och försök igen.</translation>
         <translation>Verktygsfält för tabbar</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Begär betalning (genererar QR-koder och bitcoin-URI)</translation>
+        <source>Request payments (generates QR codes and oakcoin: URIs)</source>
+        <translation>Begär betalning (genererar QR-koder och oakcoin-URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -427,16 +427,16 @@ Var vänlig och försök igen.</translation>
         <translation>Visa listan av använda mottagningsadresser och etiketter</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Öppna en bitcoin: URI eller betalningsbegäran</translation>
+        <source>Open a oakcoin: URI or payment request</source>
+        <translation>Öppna en oakcoin: URI eller betalningsbegäran</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandoradsalternativ</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n aktiva anslutningar till Bitcoin-nätverket.</numerusform><numerusform>%n aktiva anslutningar till Bitcoin-nätverket.</numerusform></translation>
+        <source>%n active connection(s) to Oakcoin network</source>
+        <translation><numerusform>%n aktiva anslutningar till Oakcoin-nätverket.</numerusform><numerusform>%n aktiva anslutningar till Oakcoin-nätverket.</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -479,8 +479,8 @@ Var vänlig och försök igen.</translation>
         <translation>Uppdaterad</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Bitcoin kommandoradsalternativ.</translation>
+        <source>Show the %1 help message to get a list with possible Oakcoin command-line options</source>
+        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Oakcoin kommandoradsalternativ.</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -760,8 +760,8 @@ Var vänlig och försök igen.</translation>
         <translation>Eftersom detta är första gången programmet startas får du välja var %1 skall lagra sitt data.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Bitcoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 kommer att ladda ner och spara en kopia av Bitcoin blockkedjan. Åtminstone %2GB av data kommer att sparas i denna katalog, och den kommer att växa över tiden. Plånboken kommer också att sparas i denna katalog.</translation>
+        <source>%1 will download and store a copy of the Oakcoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>%1 kommer att ladda ner och spara en kopia av Oakcoin blockkedjan. Åtminstone %2GB av data kommer att sparas i denna katalog, och den kommer att växa över tiden. Plånboken kommer också att sparas i denna katalog.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -937,16 +937,16 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Spendera obekräftad växel</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Bitcoin-klientens port på routern. Detta fungerar endast om din router har UPnP aktiverat.</translation>
+        <source>Automatically open the Oakcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt Oakcoin-klientens port på routern. Detta fungerar endast om din router har UPnP aktiverat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Tilldela port med hjälp av &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation>Anslut till Bitcoin-nätverket genom en SOCKS5-proxy.</translation>
+        <source>Connect to the Oakcoin network through a SOCKS5 proxy.</source>
+        <translation>Anslut till Oakcoin-nätverket genom en SOCKS5-proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -985,8 +985,8 @@ Var vänlig och försök igen.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Anslut till Bitcoin-nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
+        <source>Connect to the Oakcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Anslut till Oakcoin-nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1084,8 +1084,8 @@ Var vänlig och försök igen.</translation>
         <translation>Formulär</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Bitcoin-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Oakcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Oakcoin-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1189,8 +1189,8 @@ Var vänlig och försök igen.</translation>
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Ange en Bitcoin-adress (t.ex. %1)</translation>
+        <source>Enter a Oakcoin address (e.g. %1)</source>
+        <translation>Ange en Oakcoin-adress (t.ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1561,8 +1561,8 @@ Var vänlig och försök igen.</translation>
         <translation>Åt&amp;eranvänd en existerande mottagningsadress (rekommenderas inte)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>Ett frivilligt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. NB: Meddelandet kommer inte att sändas med betalningen över Bitcoinnätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Oakcoin network.</source>
+        <translation>Ett frivilligt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. NB: Meddelandet kommer inte att sändas med betalningen över Oakcoinnätverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1770,8 +1770,8 @@ Var vänlig och försök igen.</translation>
         <translation>totalt minst</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
-        <translation>Att betala endast den minsta avgiften är bara bra så länge det är mindre transaktionsvolym än utrymme i blocken. Men tänk på att det kan hamna i en aldrig bekräftar transaktion när det finns mer efterfrågan på bitcoin transaktioner än nätverket kan bearbeta.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for oakcoin transactions than the network can process.</source>
+        <translation>Att betala endast den minsta avgiften är bara bra så länge det är mindre transaktionsvolym än utrymme i blocken. Men tänk på att det kan hamna i en aldrig bekräftar transaktion när det finns mer efterfrågan på oakcoin transaktioner än nätverket kan bearbeta.</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -1873,8 +1873,8 @@ Var vänlig och försök igen.</translation>
         <translation>Detta är en normal betalning.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
-        <translation>Bitcoinadress att sända betalning till</translation>
+        <source>The Oakcoin address to send the payment to</source>
+        <translation>Oakcoinadress att sända betalning till</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1893,8 +1893,8 @@ Var vänlig och försök igen.</translation>
         <translation>Radera denna post</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Avgiften dras från beloppet som skickas. Mottagaren kommer att få mindre bitcoins än du angivit i belopp-fältet. Om flera mottagare valts kommer avgiften delas jämt.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less oakcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Avgiften dras från beloppet som skickas. Mottagaren kommer att få mindre oakcoins än du angivit i belopp-fältet. Om flera mottagare valts kommer avgiften delas jämt.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1917,8 +1917,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ange en etikett för denna adress att adderas till listan över använda adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>Ett meddelande som bifogades bitcoin-URI, vilket lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Bitcoinnätverket.</translation>
+        <source>A message that was attached to the oakcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Oakcoin network.</source>
+        <translation>Ett meddelande som bifogades oakcoin-URI, vilket lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Oakcoinnätverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1958,12 +1958,12 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Signera Meddelande</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Du kan underteckna meddelanden/avtal med dina adresser för att bevisa att du kan ta emot bitcoins som skickats till dem. Var försiktig så du inte undertecknar något oklart eller konstigt, eftersom phishing-angrepp kan försöka få dig att underteckna din identitet till dem. Underteckna endast väldetaljerade meddelanden som du godkänner.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive oakcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Du kan underteckna meddelanden/avtal med dina adresser för att bevisa att du kan ta emot oakcoins som skickats till dem. Var försiktig så du inte undertecknar något oklart eller konstigt, eftersom phishing-angrepp kan försöka få dig att underteckna din identitet till dem. Underteckna endast väldetaljerade meddelanden som du godkänner.</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
-        <translation>Bitcoinadress att signera meddelandet med</translation>
+        <source>The Oakcoin address to sign the message with</source>
+        <translation>Oakcoinadress att signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1994,7 +1994,7 @@ Var vänlig och försök igen.</translation>
         <translation>Kopiera signaturen till systemets Urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
+        <source>Sign the message to prove you own this Oakcoin address</source>
         <translation>Signera meddelandet för att bevisa att du äger denna adress</translation>
     </message>
     <message>
@@ -2018,12 +2018,12 @@ Var vänlig och försök igen.</translation>
         <translation>Ange mottagarens adress, meddelande (kopiera radbrytningar, mellanrum, flikar, etc. exakt) och signatur nedan för att verifiera meddelandet. Undvik att läsa in mera information i signaturen än vad som stod i själva undertecknade meddelandet, för att undvika ett man-in-the-middle-angrepp. Notera att detta endast bevisar att undertecknad tar emot med adressen, det bevisar inte vem som skickat transaktionen!</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
-        <translation>Bitcoinadressen som meddelandet signerades med</translation>
+        <source>The Oakcoin address the message was signed with</source>
+        <translation>Oakcoinadressen som meddelandet signerades med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den angivna Bitcoin-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified Oakcoin address</source>
+        <translation>Verifiera meddelandet för att vara säker på att den var signerad med den angivna Oakcoin-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2153,7 +2153,7 @@ Var vänlig och försök igen.</translation>
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>oakcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Inställningar:</translation>
@@ -2211,8 +2211,8 @@ Var vänlig och försök igen.</translation>
         <translation>Kunde inte starta HTTP-server. Se avlusningsloggen för detaljer.</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Oakcoin Core</source>
+        <translation>Oakcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -2924,7 +2924,7 @@ Var vänlig och försök igen.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
-        <translation>Otillräckligt med bitcoins</translation>
+        <translation>Otillräckligt med oakcoins</translation>
     </message>
     <message>
         <source>Loading block index...</source>
