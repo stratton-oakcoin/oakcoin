@@ -1,6 +1,6 @@
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=oakcoin-qt '%u'
+protocol=oakcoin
 input=none
 output=none
 helper=true

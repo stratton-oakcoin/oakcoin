@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2017 The Bitcoin Core developers
+# Copyright (c) 2014-2017 The Oakcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test mempool persistence.
 
-By default, bitcoind will dump mempool on shutdown and
+By default, oakcoind will dump mempool on shutdown and
 then reload it on startup. This can be overridden with
 the -persistmempool=false command line option.
 
@@ -31,10 +31,10 @@ Test is as follows:
 
 """
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import OakcoinTestFramework
 from test_framework.util import *
 
-class MempoolPersistTest(BitcoinTestFramework):
+class MempoolPersistTest(OakcoinTestFramework):
 
     def __init__(self):
         super().__init__()

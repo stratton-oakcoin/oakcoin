@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Copyright 2014 BitPay Inc.
-# Copyright 2016 The Bitcoin Core developers
+# Copyright 2016 The Oakcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 from __future__ import division,print_function,unicode_literals
@@ -9,7 +9,7 @@ import sys
 import argparse
 import logging
 
-help_text="""Test framework for bitcoin utils.
+help_text="""Test framework for oakcoin utils.
 
 Runs automatically during `make check`. 
 
@@ -33,4 +33,4 @@ if __name__ == '__main__':
     # Add the format/level to the logger
     logging.basicConfig(format = formatter, level=level)
 
-    bctest.bctester(buildenv.SRCDIR + "/test/util/data", "bitcoin-util-test.json", buildenv)
+    bctest.bctester(buildenv.SRCDIR + "/test/util/data", "oakcoin-util-test.json", buildenv)

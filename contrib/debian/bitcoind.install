@@ -1,2 +1,2 @@
-usr/local/bin/bitcoind usr/bin
-usr/local/bin/bitcoin-cli usr/bin
+usr/local/bin/oakcoind usr/bin
+usr/local/bin/oakcoin-cli usr/bin
