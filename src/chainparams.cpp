@@ -107,6 +107,24 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
+
+        /* TODO
+           Did this use to live in main.cpp? 
+
+           you need to change your coins network id to make it unique. 
+           find this in your source. 
+    
+                Code:
+                unsigned char pchMessageStart[4] =
+            this will be followed by four  4 charachter hex codes(representing ascii charachters) 
+            inside a set of brackets. such as 
+    
+                Code:
+                { 0xe4, 0xe8, 0xe9, 0xe5 };
+    
+           change a few of the hexadecimal codes, but make sure they are valid, 
+           eg. - 0xdd, 0xff, 0xfe, 0xf3, 0xda, 0xff, 0xle, etc.
+        */
         pchMessageStart[0] = 0xf9;
         pchMessageStart[1] = 0xbe;
         pchMessageStart[2] = 0xb4;

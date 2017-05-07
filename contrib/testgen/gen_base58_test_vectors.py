@@ -17,13 +17,19 @@ from base58 import b58encode_chk, b58decode_chk, b58chars
 import random
 from binascii import b2a_hex
 
+# e)base58.h
+#       -change the starting letter for the addresses of your coin. 
+#        for a list of values, google base58 charachter codes, or better yet, 
+#        see this link from the bitcoin wiki. 
+#        https://en.bitcoin.it/wiki/Base58Check_encoding
+
 # key types
-PUBKEY_ADDRESS = 0
-SCRIPT_ADDRESS = 5
-PUBKEY_ADDRESS_TEST = 111
-SCRIPT_ADDRESS_TEST = 196
-PRIVKEY = 128
-PRIVKEY_TEST = 239
+PUBKEY_ADDRESS = 42
+SCRIPT_ADDRESS = 666
+PUBKEY_ADDRESS_TEST = 13
+SCRIPT_ADDRESS_TEST = 88
+PRIVKEY = 187
+PRIVKEY_TEST = 314
 
 metadata_keys = ['isPrivkey', 'isTestnet', 'addrType', 'isCompressed']
 # templates for valid sequences
